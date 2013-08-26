@@ -53,6 +53,7 @@ class Networks extends CometActor with CometListener {
       }
       reRender()
 
+      // todo change to use Actor message from vCloud service
       spawn {
         try {
           logger.info("Getting the detailed networks view for the actor " + this)
