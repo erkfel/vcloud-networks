@@ -1,0 +1,107 @@
+<div class="lift:surround?with=default;at=content" xmlns="http://www.w3.org/1999/html"
+     xmlns="http://www.w3.org/1999/html">
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+
+                <div class="form-group" style=" height: 15px">
+                </div>
+
+                <form class="form-inline lift:FilterNetwork?form=post" role="form" style="display:inline-block">
+                    <div class="form-group" style="display:inline-block">
+                        <select name="vCloudSelect" id="vCloudSelect" class="form-control" style="width: 160px;"
+                                title="vCloud organization">
+                        </select>
+                    </div>
+                    <div class="form-group" style="display:inline-block; width: 10px">
+                    </div>
+                    <div class="form-group" style="display:inline-block">
+                        <label class="text inline">
+                            <input type="text" data-provide="typeahead" name="ip_from" placeholder="Search"
+                                   class="form-control"
+                                   style="width: 120px;"
+                                   title="IP start (ignored with 'All' search mode)"/>
+                        </label>
+                    </div>
+                    <div class="form-group" style="display:inline-block; width: 10px">
+                    </div>
+                    <div class="form-group" style="display:inline-block">
+                        <label class="text inline">
+                            <input type="text" data-provide="typeahead" name="ip_to" style="width: 120px;"
+                                   class="form-control"
+                                   title="IP end (ignored with 'All' search mode)"/>
+                        </label>
+                    </div>
+                    <div class="form-group" style="display:inline-block; width: 10px">
+                    </div>
+                    <div class="form-group" style="display:inline-block">
+                        <select name="searchModeSelect" id="searchModeSelect" class="form-control" style="width: 80px;"
+                                title="Search mode">
+                        </select>
+                    </div>
+                    <div class="form-group" style="display:inline-block; width: 10px">
+                    </div>
+                    <div class="checkbox" style="display:inline-block">
+                        <label class="checkbox-inline" style="width: 70px;">
+                            <input type="checkbox" name="checkBoxCache" id="cache" class="form-control"
+                                   title="Search in the result from the previous response (to avoid time consuming request to vCloud)"> Cache
+                        </label>
+                    </div>
+                    <div class="form-group" style="display:inline-block; width: 10px">
+                    </div>
+                    <div class="checkbox" style="display:inline-block">
+                        <label class="checkbox-inline" style="width: 180px;">
+                            <input type="checkbox" name="checkBoxNetworkRange" id="nrange" class="form-control"
+                                   title="Check network IP range assigned from vCloud"> Check
+                            network range
+                        </label>
+                    </div>
+                    <div class="form-group" style="display:inline-block; width: 10px">
+                    </div>
+                    <button type="submit" class="btn btn-primary navbar-right" data-loading-text="Loading...">
+                        Search
+                    </button>
+                </form>
+                <p class="navbar-text pull-right lift:comet?type=Progress" id="status" ></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <table class="table table-striped lift:comet?type=Networks" cellpadding="0" cellspacing="0" border="1"
+               id="networks">
+            <thead>
+            <tr>
+                <th>Network</th>
+                <th>Attached vApps</th>
+                <th>IP range</th>
+                <th>Attached vApps count</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="tr_content">
+                <td name="network">
+                    <ul style="list-style: none;">
+                        <li></li>
+                    </ul>
+                </td>
+                <td name="vapps">
+                    <ul style="list-style: none;">
+                        <li></li>
+                    </ul>
+                </td>
+                <td name="ips">
+                    <ul style="list-style: none;">
+                        <li></li>
+                    </ul>
+                </td>
+                <td name="vapps_count"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
